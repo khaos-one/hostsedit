@@ -14,6 +14,19 @@ namespace HostsEdit {
 
         public MainForm() {
             InitializeComponent();
+
+            KeyPreview = true;
+            dataGridView.AutoGenerateColumns = false;
+
+            LoadAll(null, null);
+        }
+
+        private void SaveAll(object sender, EventArgs e) {
+            dataGridView.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            _hosts.Save();
+        }
+
+        private void LoadAll(object sender, EventArgs e) {
             try {
                 _hosts.Load();
             }
@@ -23,17 +36,12 @@ namespace HostsEdit {
             }
 
             dataGridView.DataSource = _hosts.RelevantEntries;
-            dataGridView.AutoGenerateColumns = false;
         }
 
-        private void saveButton_Click(object sender, EventArgs e) {
-            dataGridView.CommitEdit(DataGridViewDataErrorContexts.Commit);
-            _hosts.Save();
-        }
-
-        private void reloadButton_Click(object sender, EventArgs e) {
-            _hosts.Load();
-            dataGridView.DataSource = _hosts.RelevantEntries;
+        private void MainForm_KeyDown(object sender, KeyEventArgs e) {
+            if (e.Control && e.KeyCode == Keys.S) {
+                SaveAll(null, null);
+            }
         }
     }
 }
