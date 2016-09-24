@@ -14,7 +14,14 @@ namespace HostsEdit {
 
         public MainForm() {
             InitializeComponent();
-            _hosts.Load();
+            try {
+                _hosts.Load();
+            }
+            catch {
+                MessageBox.Show("Failed to open hosts file.", "Failed to open hosts file.", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+
             dataGridView.DataSource = _hosts.RelevantEntries;
             dataGridView.AutoGenerateColumns = false;
         }
