@@ -27,6 +27,8 @@ namespace HostsEdit {
                 throw;
             }
 
+            Lines = new List<HostsEntry>(content.Length);
+
             foreach (var line in content) {
                 var match = ActiveEntryRegex.Match(line);
 
