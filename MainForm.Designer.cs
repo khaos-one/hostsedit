@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.mainToolStrip = new System.Windows.Forms.ToolStrip();
-            this.saveButton = new System.Windows.Forms.ToolStripButton();
-            this.reloadButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.IsActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Ip = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Host = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsDull = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.RawContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mainToolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
+            this.saveButton = new System.Windows.Forms.ToolStripButton();
+            this.reloadButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.mainToolStrip.SuspendLayout();
             this.toolStripContainer.ContentPanel.SuspendLayout();
@@ -59,59 +59,8 @@
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(511, 353);
+            this.dataGridView.Size = new System.Drawing.Size(511, 343);
             this.dataGridView.TabIndex = 0;
-            // 
-            // mainToolStrip
-            // 
-            this.mainToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.mainToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveButton,
-            this.reloadButton});
-            this.mainToolStrip.Location = new System.Drawing.Point(3, 0);
-            this.mainToolStrip.Name = "mainToolStrip";
-            this.mainToolStrip.Size = new System.Drawing.Size(49, 25);
-            this.mainToolStrip.TabIndex = 1;
-            this.mainToolStrip.Text = "toolStrip1";
-            // 
-            // saveButton
-            // 
-            this.saveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveButton.Image = ((System.Drawing.Image)(resources.GetObject("saveButton.Image")));
-            this.saveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(23, 22);
-            this.saveButton.Text = "Save";
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
-            // reloadButton
-            // 
-            this.reloadButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.reloadButton.Image = ((System.Drawing.Image)(resources.GetObject("reloadButton.Image")));
-            this.reloadButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.reloadButton.Name = "reloadButton";
-            this.reloadButton.Size = new System.Drawing.Size(23, 22);
-            this.reloadButton.Text = "Reload";
-            this.reloadButton.Click += new System.EventHandler(this.reloadButton_Click);
-            // 
-            // toolStripContainer
-            // 
-            // 
-            // toolStripContainer.ContentPanel
-            // 
-            this.toolStripContainer.ContentPanel.Controls.Add(this.dataGridView);
-            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(511, 353);
-            this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer.Location = new System.Drawing.Point(0, 0);
-            this.toolStripContainer.Name = "toolStripContainer";
-            this.toolStripContainer.Size = new System.Drawing.Size(511, 378);
-            this.toolStripContainer.TabIndex = 2;
-            this.toolStripContainer.Text = "toolStripContainer1";
-            // 
-            // toolStripContainer.TopToolStripPanel
-            // 
-            this.toolStripContainer.TopToolStripPanel.Controls.Add(this.mainToolStrip);
             // 
             // IsActive
             // 
@@ -152,12 +101,66 @@
             this.RawContent.Name = "RawContent";
             this.RawContent.Visible = false;
             // 
+            // mainToolStrip
+            // 
+            this.mainToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.mainToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveButton,
+            this.reloadButton});
+            this.mainToolStrip.Location = new System.Drawing.Point(3, 0);
+            this.mainToolStrip.Name = "mainToolStrip";
+            this.mainToolStrip.Size = new System.Drawing.Size(67, 35);
+            this.mainToolStrip.TabIndex = 1;
+            this.mainToolStrip.Text = "toolStrip1";
+            // 
+            // toolStripContainer
+            // 
+            // 
+            // toolStripContainer.ContentPanel
+            // 
+            this.toolStripContainer.ContentPanel.Controls.Add(this.dataGridView);
+            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(511, 343);
+            this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer.Name = "toolStripContainer";
+            this.toolStripContainer.Size = new System.Drawing.Size(511, 378);
+            this.toolStripContainer.TabIndex = 2;
+            // 
+            // toolStripContainer.TopToolStripPanel
+            // 
+            this.toolStripContainer.TopToolStripPanel.Controls.Add(this.mainToolStrip);
+            // 
+            // saveButton
+            // 
+            this.saveButton.AutoSize = false;
+            this.saveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveButton.Image = global::HostsEdit.Properties.Resources.Save;
+            this.saveButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.saveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(32, 32);
+            this.saveButton.Text = "Save";
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // reloadButton
+            // 
+            this.reloadButton.AutoSize = false;
+            this.reloadButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.reloadButton.Image = global::HostsEdit.Properties.Resources.Refresh;
+            this.reloadButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.reloadButton.Name = "reloadButton";
+            this.reloadButton.Size = new System.Drawing.Size(32, 32);
+            this.reloadButton.Text = "Reload";
+            this.reloadButton.Click += new System.EventHandler(this.reloadButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(511, 378);
             this.Controls.Add(this.toolStripContainer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "HostsEdit";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
