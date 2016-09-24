@@ -34,6 +34,11 @@
             this.saveButton = new System.Windows.Forms.ToolStripButton();
             this.reloadButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
+            this.IsActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Ip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Host = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsDull = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.RawContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.mainToolStrip.SuspendLayout();
             this.toolStripContainer.ContentPanel.SuspendLayout();
@@ -45,6 +50,12 @@
             // 
             this.dataGridView.AllowUserToOrderColumns = true;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IsActive,
+            this.Ip,
+            this.Host,
+            this.IsDull,
+            this.RawContent});
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView.Name = "dataGridView";
@@ -102,6 +113,45 @@
             // 
             this.toolStripContainer.TopToolStripPanel.Controls.Add(this.mainToolStrip);
             // 
+            // IsActive
+            // 
+            this.IsActive.DataPropertyName = "IsActive";
+            this.IsActive.Frozen = true;
+            this.IsActive.HeaderText = "Enabled";
+            this.IsActive.Name = "IsActive";
+            this.IsActive.Width = 50;
+            // 
+            // Ip
+            // 
+            this.Ip.DataPropertyName = "Ip";
+            this.Ip.Frozen = true;
+            this.Ip.HeaderText = "IP";
+            this.Ip.Name = "Ip";
+            // 
+            // Host
+            // 
+            this.Host.DataPropertyName = "Host";
+            this.Host.Frozen = true;
+            this.Host.HeaderText = "Host";
+            this.Host.Name = "Host";
+            this.Host.Width = 250;
+            // 
+            // IsDull
+            // 
+            this.IsDull.DataPropertyName = "IsDull";
+            this.IsDull.Frozen = true;
+            this.IsDull.HeaderText = "IsDull";
+            this.IsDull.Name = "IsDull";
+            this.IsDull.Visible = false;
+            // 
+            // RawContent
+            // 
+            this.RawContent.DataPropertyName = "RawContent";
+            this.RawContent.Frozen = true;
+            this.RawContent.HeaderText = "Raw Content";
+            this.RawContent.Name = "RawContent";
+            this.RawContent.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -129,6 +179,11 @@
         private System.Windows.Forms.ToolStripButton saveButton;
         private System.Windows.Forms.ToolStripButton reloadButton;
         private System.Windows.Forms.ToolStripContainer toolStripContainer;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsActive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ip;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Host;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsDull;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RawContent;
     }
 }
 

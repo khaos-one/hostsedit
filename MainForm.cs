@@ -16,6 +16,7 @@ namespace HostsEdit {
             InitializeComponent();
             _hosts.Load();
             dataGridView.DataSource = _hosts.RelevantEntries;
+            dataGridView.AutoGenerateColumns = false;
         }
 
         private void saveButton_Click(object sender, EventArgs e) {
