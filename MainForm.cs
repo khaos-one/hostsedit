@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HostsEdit
-{
-    public partial class MainForm : Form
-    {
-        public MainForm()
-        {
+namespace HostsEdit {
+    public partial class MainForm : Form {
+        public MainForm() {
             InitializeComponent();
+        }
+
+        private void LoadHosts() {
+            
         }
     }
 }
