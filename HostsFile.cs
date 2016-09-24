@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace HostsEdit {
@@ -16,6 +18,8 @@ namespace HostsEdit {
         public static readonly Regex DullLineRegex = new Regex(@"^\s*#.*", RegexOptions.Compiled);
 
         public List<HostsEntry> Lines { get; private set; }
+
+        public ExtendedBindingList<HostsEntry> RelevantEntries { get; private set; }
 
         public void Load() {
             string[] content;
@@ -67,6 +71,23 @@ namespace HostsEdit {
                     }
                 }
             }
+
+            RelevantEntries = new ExtendedBindingList<HostsEntry>(Lines.Where(x => !x.IsDull).ToList()) {
+                AllowEdit = true,
+                AllowNew = true,
+                AllowRemove = true,
+                RaiseListChangedEvents = true
+            };
+            RelevantEntries.ItemAdding += RelevantEntriesOnItemAdding;
+            RelevantEntries.ItemRemoving += RelevantEntriesOnItemRemoving;
+        }
+
+        private void RelevantEntriesOnItemRemoving(HostsEntry hostsEntry, int i) {
+            Lines.Remove(hostsEntry);
+        }
+
+        private void RelevantEntriesOnItemAdding(HostsEntry hostsEntry, int i) {
+            Lines.Add(hostsEntry);
         }
 
         public void Save() {
